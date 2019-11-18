@@ -19,13 +19,16 @@ $(".grid-item").click(function(){
       url : "https://ﬂynn.boolean.careers/exercises/api/random/int",
       method : "GET",
       success : function (data) {
-        if (data.response <= 5 ) {
+        if (data.response <= 5) {
           clicked.css("background", "yellow");
-          clicked.find(".num").text(data.response);
+          clicked.text(data.response);
+          //con .off impedisco di cliccare nuovamente sul quadrato già cliccato
+          clicked.off("click");
         }
         else {
           clicked.css("background", "green");
-          clicked.find(".num").text(data.response);
+          clicked.text(data.response);
+          clicked.off("click");
         }
             console.log(data);
          },
