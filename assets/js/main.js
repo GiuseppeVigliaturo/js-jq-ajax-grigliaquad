@@ -21,9 +21,11 @@ $(".grid-item").click(function(){
       success : function (data) {
         if (data.response <= 5 ) {
           clicked.css("background", "yellow");
+          clicked.find(".num").text(data.response);
         }
         else {
           clicked.css("background", "green");
+          clicked.find(".num").text(data.response);
         }
             console.log(data);
          },
